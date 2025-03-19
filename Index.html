@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Official Media</title> 
+  <link rel="stylesheet" href="styles.css"> 
+ <style type="text/css" id="dcoder_stylesheet">body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+}
+
+header {
+    background: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+#hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('images/hero.jpg') no-repeat center center/cover;
+}
+
+#services, #portfolio, #contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    background: #333;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.service-box img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.portfolio-gallery img {
+    width: 30%;
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form textarea {
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    background: #222;
+    border: 1px solid #00bcd4;
+    color: white;
+}
+
+form button {
+    background: #00bcd4;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+}</style></head> 
+ <body> 
+  <header> 
+   <h1>Official Media</h1> 
+   <nav> 
+    <ul> 
+     <li><a href="#services">Services</a></li> 
+     <li><a href="#portfolio">Portfolio</a></li> 
+     <li><a href="#contact">Contact</a></li> 
+    </ul> 
+   </nav> 
+  </header> 
+  <section id="hero"> 
+   <h2>Your One-Stop Creative Solution</h2> 
+   <p>Graphics Design | Video Editing | Web Development | Videography</p> 
+  </section> 
+  <section id="services"> 
+   <h2>Our Services</h2> 
+   <div class="service-container"> 
+    <div class="service-box"> 
+     <img src="images/graphics.jpg" alt="Graphic Design"> 
+     <h3>Graphics Design</h3> 
+     <p>High-quality design for branding, marketing, and digital media.</p> 
+    </div> 
+    <div class="service-box"> 
+     <img src="images/video_editing.jpg" alt="Video Editing"> 
+     <h3>Video Editing</h3> 
+     <p>Professional video editing with effects, transitions, and storytelling.</p> 
+    </div> 
+    <div class="service-box"> 
+     <img src="images/web_dev.jpg" alt="Web Development"> 
+     <h3>Website Development</h3> 
+     <p>Modern, responsive websites tailored to your needs.</p> 
+    </div> 
+    <div class="service-box"> 
+     <img src="images/videography.jpg" alt="Videography"> 
+     <h3>Videography</h3> 
+     <p>Capture memorable moments with high-quality filming services.</p> 
+    </div> 
+   </div> 
+  </section> 
+  <section id="portfolio"> 
+   <h2>Portfolio</h2> 
+   <div class="portfolio-gallery"> 
+    <img src="images/portfolio1.jpg" alt="Project 1"> 
+    <img src="images/portfolio2.jpg" alt="Project 2"> 
+    <img src="images/portfolio3.jpg" alt="Project 3"> 
+   </div> 
+  </section> 
+  <section id="contact"> 
+   <h2>Contact Us</h2> 
+   <form id="contactForm"> 
+    <input type="text" name="name" placeholder="Your Name" required> 
+    <input type="email" name="email" placeholder="Your Email" required> <textarea name="message" placeholder="Your Message" required></textarea> <button type="submit">Send Message</button> 
+   </form> 
+  </section> 
+  <footer> 
+   <p>© 2025 Official Media | All rights reserved.</p> 
+  </footer> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("https://formspree.io/f/your-form-id", {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    }).then(response => {
+        if (response.ok) {
+            alert("Your message has been sent successfully!");
+            document.getElementById("contactForm").reset();
+        } else {
+            alert("Error! Please try again.");
+        }
+    }).catch(error => {
+        alert("Something went wrong. Please try again later.");
+    });
+});</script></body></html>
